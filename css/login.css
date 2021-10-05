@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Goblin+One&family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+section{
+    background-image: url(../img/Fundo-geral.jpg);
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+h1{
+    width: 100%;
+    position: relative;
+    top: 50px;
+    text-align: center;
+    font-family: 'Goblin One', cursive;
+    font-size: 40px;
+    margin-bottom: 200px;
+    color: white;
+}
+.flexbox{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+h2{
+    width: 100%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+}
+.formulario{
+    background-color: #fff;
+    text-align: center;
+    width: 350px;
+    height: 300px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+.ajuste-form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.formulario form{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.formulario form input{
+    height: 35px;
+}
+.envia{
+    width: 50%;
+    margin-top: 10px;
+    color: black;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 50px;
+    border: solid black 2px;
+    transition: .5s;
+}
+.envia:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+@media screen and (max-width: 600px){
+    h1{
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,30 @@
+.ajuste-form{
+    background-color: white;
+}
+form{
+    width: 600px;
+    background-color: #fff;
+    margin: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+form input{
+    height: 30px;
+}
+.input-duplo{
+    display: flex;
+    justify-content: space-between;
+}
+.input-duplo input{
+    width: 47%
+}
+.input-envia input{
+    width: 80px;
+    background-color: #fff;
+    box-shadow: .5px .5px 4px .5px rgba(0, 0, 0, 0.555);
+}
+@media screen and (max-width:700px){
+    form{
+        width: 90vw;
+    }
+}

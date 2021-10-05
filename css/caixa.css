@@ -1,0 +1,143 @@
+ul li{
+    list-style: none;
+}
+#printable{
+    width: 5.8cm;
+    height: 21cm;
+    border: none;
+}
+.titulo-nota{
+    font-size: 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.dados-nota{
+    font-size: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.titulo2-nota{
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#tabela-nota{
+    font-size: 12px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+#tabela-nota tr{
+    width: 100%;
+}
+#tabela-nota tr th{
+    border: none!important;
+    font-size: 10px;
+    max-width: 25%;
+}
+.total-nota{
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+p{
+    padding: 0px;
+    margin: 0px;
+}
+.ajuste-caixa{
+    display: flex;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+form, form input{
+    border: none;
+}
+form input, .total{
+    height: 50px;
+    border: 1px solid black;
+}
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+.envia, .pagamento input{
+    width: 100px;
+    height: 52px;
+}
+.pagamento{
+    margin-left: 0px !important;
+    display: flex;
+    justify-content: space-between;
+}
+.itens-caixa{
+    width: 800px;
+    height: 60vh;
+    background-color: #fff;
+    overflow-y: scroll;
+}
+.dados-caixa{
+    margin-left: 20px;
+}
+table th, table td{
+    border: solid black 1px;
+}
+table, table tr{
+    width: 100%;
+}
+table tr th img{
+    padding-top: 5px;
+    padding-bottom: 4px;
+}
+table tr th img:hover{
+    cursor: pointer;
+}
+@media print{
+    section{
+        display: none;
+    }
+    #printable{
+        display: block;
+    }
+}
+@media screen and (max-width:1000px){
+    .ajuste-caixa{
+        width: 90vw;
+    }
+}
+@media screen and (max-width: 600px){
+    .ajuste-caixa{
+        width: 90vw!important;
+        display: block;
+        
+    }
+    .itens-caixa{
+        width: 90vw!important;
+        height: 60vh;
+    }
+    .dados-caixa{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .envia, .pagamento input{
+        width: 100%;
+    }
+    .total{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@media print{
+    section{
+        display: none;
+    }
+    
+}
