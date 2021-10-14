@@ -43,20 +43,20 @@ if(isset($_GET['deslogar'])){
                 </div>
                 <div class="ajuste-form">
                     <form action="" method="POST">
-                        <?php include("php/enviapesqprod.php") ?>
+                        <?php include("php/enviaPesquisa.php") ?>
                         <div class="codigo">
-                            <input type="text" placeholder="Codigo" name="codigo" autocomplete="off" autofocus value="<?php echo $codigo; ?>">
+                            <input type="text" placeholder="Codigo" name="codigo" autocomplete="off" autofocus value="<?php echo $p->getCodigo()?>">
                         </div><br>
                         <div class="descricao">
-                            <input type="text" placeholder="Descrição" name="desc" autocomplete="off" value="<?php echo $descricao?>">
+                            <input type="text" placeholder="Descrição" name="desc" autocomplete="off" value="<?php echo $p->getDescricao() ?>">
                         </div><br>
                         <div class="input-duplo">
-                            <input type="text" placeholder="Preço de custo" name="preco-custo" autocomplete="off" value="<?php echo $preco_custo?>">
-                            <input type="text" placeholder="Preço de venda" name="preco-venda" autocomplete="off" value="<?php echo $preco_venda?>">
+                            <input type="text" placeholder="Preço de custo" name="preco-custo" autocomplete="off" value="<?php echo $p->getValorCusto()?>">
+                            <input type="text" placeholder="Preço de venda" name="preco-venda" autocomplete="off" value="<?php echo $p->getValorVenda()?>">
                         </div><br>
                         <div class="input-duplo">
-                            <input type="text" placeholder="QTD em estoque" name="qtd-estoque" autocomplete="off" value="<?php echo $qtd_estoque?>">
-                            <input type="text" placeholder="QTD mínima" name="qtd-min" autocomplete="off" value="<?php echo $qtd_minima?>">
+                            <input type="text" placeholder="QTD em estoque" name="qtd-estoque" autocomplete="off" value="<?php echo $p->getQtdEstoque()?>">
+                            <input type="text" placeholder="QTD mínima" name="qtd-min" autocomplete="off" value="<?php echo $p->getQtdMin()?>">
                         </div><br>
                         <div class="input-envia">
                             
@@ -73,4 +73,3 @@ if(isset($_GET['deslogar'])){
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/main.js"></script>
 <script src="js/imprime.js"></script>
-<script src="js/modal.js"></script>

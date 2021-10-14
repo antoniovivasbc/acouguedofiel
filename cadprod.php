@@ -1,7 +1,6 @@
 <?php
 session_start();
   include("conexao.php");
-  
   if(isset($_SESSION['$nome2'])){
     header("location: caixa.php");
 }else if(!isset($_SESSION[ 'adm2' ])){
@@ -42,7 +41,7 @@ if(isset($_GET['deslogar'])){
                     <br><h2>CADASTRO DE PRODUTOS</h2><br><br>
                 </div>
                 <div class="ajuste-form">
-                    <form action="" method="POST">
+                    <form action="php/enviaCad.php" method="POST">
                         <div class="descricao">
                             <input type="text" placeholder="Descrição" name="desc" autofocus autocomplete = "off">
                         </div><br>
@@ -60,7 +59,6 @@ if(isset($_GET['deslogar'])){
                         <div class="input-envia">
                             <input type="submit" value="Enviar" name="enviar">
                         </div>
-                        <?php include("php/enviacad.php") ?>
                     </form>
                 </div>
             </div>
@@ -70,4 +68,3 @@ if(isset($_GET['deslogar'])){
 <script src="js/jquery-3.5.1.js"></script>
 <script src="js/main.js"></script>
 <script src="js/imprime.js"></script>
-<script src="js/modal.js"></script>
