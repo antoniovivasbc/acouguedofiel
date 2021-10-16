@@ -8,6 +8,7 @@
         protected $valor_venda;
         protected $qtd_estoque;
         protected $qtd_minima;
+        protected $qtd_venda;
         //Construct
         function __construct($codigo, $descricao, $valor_custo, $valor_venda, $qtd_estoque, $qtd_minima)
         {
@@ -40,7 +41,7 @@
         function getValorCusto(){
             return $this->valor_custo;
         }
-        function setValor($vc){
+        function setValorCusto($vc){
             $this->valor_custo = $vc;
         }
         function getValorVenda(){
@@ -61,39 +62,12 @@
         function setQtdMin($qtd){
             $this->qtd_minima = $qtd;
         }
+        function getQtdVenda(){
+            return $this->qtd_venda;
+        }
+        function setQtdVenda($qtd){
+            $this->qtd_venda = $qtd;
+        }
         //Functions
-        function editaProd($msqli){
-            $update = "UPDATE cadastro_produto
-            SET descricao = '$this->descricao', preco_custo = '$this->valor_custo', preco_venda = '$this->valor_venda', qtd_estoque = '$this->qtd_estoque', qtd_minima = '$this->qtd_minima'
-            WHERE codigo = '$this->codigo'";
-            $result = mysqli_query($msqli, $update);
-        }
-        function pesquisaProd($msqli, $codigo){
-            $this->codigo = $codigo;
-            $select = "SELECT * FROM cadastro_produto WHERE codigo = '$codigo'";
-            $result = mysqli_query($msqli, $select);
-            $row = mysqli_num_rows($result);
-            if($row < 1){
-                echo'<p class="aviso"> *Produto não encontrado </p>';
-            }else{
-                $dados = mysqli_fetch_array($result);
-                $this->descricao = $dados['descricao'];
-                $this->valor_custo = $dados['preco_custo'];
-                $this->valor_venda = $dados['preco_venda'];
-                $this->qtd_estoque = $dados['qtd_estoque'];
-                $this->qtd_minima = $dados['qtd_minima'];
-            }            
-        }
-        function cadastrarProd($msqli){
-            $select = "SELECT * FROM cadastro_produto WHERE codigo = '$this->codigo'";
-            $result = mysqli_query($msqli, $select);
-            $row = mysqli_num_rows($result);
-            if($row>0){
-                echo '<p class="aviso">*Produto já cadastrado</p>';
-            }else{
-                $resultado = "INSERT INTO cadastro_produto (codigo, descricao, preco_custo, preco_venda, qtd_estoque, qtd_minima) VALUES('$this->codigo', '$this->descricao', '$this->valor_custo', '$this->valor_venda', '$this->qtd_estoque', '$this->qtd_minima')";
-                $result = mysqli_query($msqli, $resultado); 
-            }
-        }
     }
 ?>
