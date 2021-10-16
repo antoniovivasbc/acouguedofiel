@@ -1,7 +1,9 @@
 <?php
 session_start();
   include("conexao.php");
-  
+  require_once "php/classes/usuario.php";
+  $p = new Produto('','','','','','');
+  $u = new Usuario($p);
   if(isset($_SESSION['$nome2'])){
     header("location: caixa.php");
 }else if(!isset($_SESSION[ 'adm2' ])){
@@ -52,25 +54,7 @@ if(isset($_GET['deslogar'])){
                                 <th>Qtd atual</th>
                             </tr>
                             <?php
-                                $pesquisa = "SELECT * FROM cadastro_produto";
-                                $resultado = mysqli_query($msqli, $pesquisa);
-                                while ($dados = mysqli_fetch_array($resultado)){
-                                    $codigo = $dados['codigo'];
-                                    $descricao = $dados['descricao'];
-                                    $preco_custo = $dados['preco_custo'];
-                                    $preco_venda = $dados['preco_venda'];
-                                    $qtd_estoque = $dados['qtd_estoque'];
-                                    $qtd_minima = $dados['qtd_minima'];
-                                    if($qtd_estoque <= $qtd_minima){
-                                        echo
-                                        "<tr>
-                                            <th>$codigo</th>
-                                            <th>$descricao</th>
-                                            <th>$preco_custo</th>
-                                            <th>$qtd_estoque</th>
-                                        </tr>";
-                                    }
-                                }
+                                $u->buscaEstoque($msqli);
                             ?>
                         </tbody>
                     </table>

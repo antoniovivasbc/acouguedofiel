@@ -104,7 +104,7 @@
         </div>
         <div class="ajuste-modal" id="modal-dinheiro">
             <div class="modal">
-                <form id='form_pagamento'>
+                <form action="php/pagamento.php" id='form_pagamento'>
                     <a onclick = " tiramodal() "><img src="img/delete2.png" alt=""></a>
                     <input autocomplete = "off" type="text" placeholder="Digite o valor" name="pagamento" id="valor">
                     <input type="submit" id='envia_pagamento' value="Enviar" name="envia-pagamento">
@@ -116,7 +116,7 @@
                 <form id='form_deleta'>
                     <a onclick = " tiramodal2() "><img src="img/delete2.png" alt=""></a>
                     <input autocomplete = "off" type="password" placeholder="Digite a senha" name="pagamento" id="senha">
-                    <input type="submit" id='envia_pagamento' value="Enviar" name="envia-pagamento">
+                    <input type="submit" id='' value="Enviar" name="envia-pagamento">
                 </form>
             </div>
         </div>

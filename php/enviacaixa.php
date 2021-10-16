@@ -14,12 +14,12 @@
             $codigo = substr("$codigo", 2, -8);
         }
         */
-        $p = new Produto($codigo, '', '', '', '', '');
+        $p= new Produto($codigo, '', '', '', '', '');
         $u = new Usuario($p);
         $p = $u->pesquisarProd($msqli, $codigo);
         $preco_total = $p->getValorVenda();
         $qtd = $preco_total/$p->getValorVenda();
-        $insert = "INSERT INTO caixa (codigo, descricao, preco, quantidade) VALUES('$codigo', 'oi' , 'oi', 'oi')";
+        $insert = "INSERT INTO caixa (codigo, descricao, preco, quantidade) VALUES('$codigo', '$p->descricao' , '$preco_total', '$qtd')";
         $result = mysqli_query($msqli, $insert);
     }
 ?>

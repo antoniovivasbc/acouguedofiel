@@ -2,13 +2,13 @@
     class Produto{
         //Atributos
         protected $id;
-        protected $codigo;
-        protected $descricao;
-        protected $valor_custo;
-        protected $valor_venda;
-        protected $qtd_estoque;
-        protected $qtd_minima;
-        protected $qtd_venda;
+        public $codigo;
+        public $descricao;
+        public $valor_custo;
+        public $valor_venda;
+        public $qtd_estoque;
+        public $qtd_minima;
+        public $qtd_venda;
         //Construct
         function __construct($codigo, $descricao, $valor_custo, $valor_venda, $qtd_estoque, $qtd_minima)
         {
