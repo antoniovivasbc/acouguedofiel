@@ -96,10 +96,10 @@
                 if($this->produto->qtd_estoque <= $this->produto->qtd_minima){
                     echo
                     "<tr>
-                        <th>".$this->produto->codigo."</th>
-                        <th>".$this->produto->descricao."</th>
-                        <th>".$this->produto->valor_custo."</th>
-                        <th>".$this->produto->qtd_estoque."</th>
+                        <td>".$this->produto->codigo."</td>
+                        <td>".$this->produto->descricao."</td>
+                        <td>".$this->produto->valor_custo."</td>
+                        <td>".$this->produto->qtd_estoque."</td>
                     </tr>";
                 }
             }
@@ -117,11 +117,11 @@
                 $total = $total + $preco_total;
                 echo
                     "<tr>
-                        <th>".$this->produto->codigo."</th>
-                        <th>".$this->produto->descricao."</th>
-                        <th>".$this->produto->valor_venda."</th>
-                        <th>".$data."</th>
-                        <th>".$hora."</th>
+                        <td>".$this->produto->codigo."</td>
+                        <td>".$this->produto->descricao."</td>
+                        <td>".$this->produto->valor_venda."</td>
+                        <td>".$data."</td>
+                        <td>".$hora."</td>
                     </tr>";
             }
             return $total;

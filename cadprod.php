@@ -29,7 +29,7 @@ if(isset($_GET['deslogar'])){
         <div id="sidebar">
             <a href="caixa.php">Caixa livre</a>
             <a href="cadprod.php">Cadastro de produtos</a>
-            <a href="pesquisaprod.php">Pesquisa de produtos</a>
+            <a href="pesquisa.php">Pesquisa de produtos</a>
             <a href="vendas.php">Relatorio de vendas</a>
             <a href="estoque.php">Planilha de estoque</a>
             <a href="?deslogar">Logout</a>

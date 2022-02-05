@@ -23,12 +23,12 @@
     <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
-    <div id = 'printable'>
+    <div id='printable'>
         <h1 class='titulo-nota'>Mercadinho do Fiel</h1>
         <ul class='dados-nota'>
-            <li>CNPJ: 29.886.050/0001-08</li>
-            <li>Endereço: Rua Basílio de Magalhães Nº19 A</li>
-            <li>PIX: (71) 98776-8091</li>
+            <li>CNPJ: xx.xxx.xxx/xxxx-xx</li>
+            <li>Endereço: Rua Basílio de Magalhães Nº xx</li>
+            <li>PIX: (xx) xxxxx-xxxx</li>
         </ul>
         <hr>
         <h2 class= titulo2-nota>Recibo</h2>
@@ -50,7 +50,7 @@
         <div id="sidebar">
             <a href="caixa.php">Caixa livre</a>
             <a href="cadprod.php">Cadastro de produtos</a>
-            <a href="pesquisaprod.php">Pesquisa de produtos</a>
+            <a href="pesquisa.php">Pesquisa de produtos</a>
             <a href="vendas.php">Relatorio de vendas</a>
             <a href="estoque.php">Planilha de estoque</a>
             <a href="?deslogar">Logout</a>

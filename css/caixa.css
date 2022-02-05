@@ -5,6 +5,7 @@ ul li{
     width: 5.8cm;
     height: 21cm;
     border: none;
+    display: none;
 }
 .titulo-nota{
     font-size: 15px;
@@ -134,10 +135,4 @@ table tr th img:hover{
         padding-left: 10px;
         padding-right: 10px;
     }
-}
-@media print{
-    section{
-        display: none;
-    }
-    
 }
