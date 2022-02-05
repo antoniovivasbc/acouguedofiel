@@ -34,7 +34,7 @@ function sidebar(){
             validator = 0;
             sidebar.style.width = "0px";
         } 
-    }else if(largura > 1000 && largura <= 1300){
+    }else if(largura > 1000 && largura <= 1400){
         if(validator == 0){
             validator = 1;
             sidebar.style.width = "20vw";
@@ -42,7 +42,7 @@ function sidebar(){
             validator = 0;
             sidebar.style.width = "0px";
         } 
-    }else if(largura > 1300){
+    }else if(largura > 1400){
         if(validator == 0){
             validator = 1;
             sidebar.style.width = "15vw";
