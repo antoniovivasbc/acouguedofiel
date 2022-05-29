@@ -12,6 +12,7 @@ var form = document.getElementById("form");
 var data;
 var form_pagamento = document.getElementById("form_pagamento");
 var form_deleta = document.getElementById("form_deleta");
+var link = window.location.href;
 //DELETA
 form_deleta.onsubmit = function(event){
     event.preventDefault();
@@ -25,7 +26,7 @@ form_pagamento.onsubmit = function(event){
         alert("Valor insuficiente.");
     }else{
         $.ajax({
-            url: 'http://localhost/acouguedofiel/php/selectproduto.php',
+            url: link + '/php/selectproduto.php',
             method: 'GET',
             datatype: 'json',
             }).done(function select(result){
@@ -44,7 +45,7 @@ form_pagamento.onsubmit = function(event){
                 }
             })
         $.ajax({
-            url: 'http://localhost/acouguedofiel/php/pagamento.php',
+            url: link + '/php/pagamento.php',
             method: 'GET',
             datatype: 'json',
         }).done(function(result){
@@ -74,7 +75,7 @@ form.onsubmit = function(event){
     form.reset();
     document.getElementById('codigo').focus();
     $.ajax({
-        url: 'http://localhost/acouguedofiel/php/enviaCaixa.php',
+        url: link + '/php/enviaCaixa.php',
         method: 'POST',
         data: {codigo: _codigo},
         datatype: 'json',
@@ -90,7 +91,7 @@ form.onsubmit = function(event){
 //PEGA TODOS OS DADOS AO CARREGAR A PÁGINA
 function getcaixa(){
     $.ajax({
-        url: 'http://localhost/acouguedofiel/php/selectproduto.php',
+        url: link + '/php/selectproduto.php',
         method: 'GET',
         datatype: 'json',
         }).done(function select(result){
@@ -127,7 +128,7 @@ function getcaixa(){
                     itens_valor--
                     itens.innerHTML = "Itens: " + itens_valor; 
                     $.ajax({
-                        url: 'http://localhost/acouguedofiel/php/deleta.php',
+                        url: link + '/php/deleta.php',
                         method: 'POST',
                         data: {id: id},
                         datatype: 'json',
@@ -146,7 +147,7 @@ function getcaixa(){
 //PEGA O PRODUTO QUE ACABOU DE SER LANÇADO
 function getcurrentcaixa(){
     $.ajax({
-    url: 'http://localhost/acouguedofiel/php/selectproduto.php',
+    url: link + '/php/selectproduto.php',
     method: 'GET',
     datatype: 'json',
     }).done(function select(result){
@@ -179,7 +180,7 @@ function getcurrentcaixa(){
                 itens_valor--
                 itens.innerHTML = "Itens: " + itens_valor; 
                 $.ajax({
-                    url: 'http://localhost/acouguedofiel/php/deleta.php',
+                    url: link + '/php/deleta.php',
                     method: 'POST',
                     data: {id: id},
                     datatype: 'json',
