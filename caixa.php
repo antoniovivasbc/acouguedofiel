@@ -1,7 +1,7 @@
 <?php
     session_start();
     include("conexao.php");
-    if(!isset($_SESSION[ 'adm2' ]) &&  !isset($_SESSION['$nome2'])){
+    if($_SESSION[ 'adm2' ] == false &&  $_SESSION['$nome2'] == false){
         header("location: index.php");
         session_destroy();
         }

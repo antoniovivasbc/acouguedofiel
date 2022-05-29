@@ -13,6 +13,8 @@ var data;
 var form_pagamento = document.getElementById("form_pagamento");
 var form_deleta = document.getElementById("form_deleta");
 var link = window.location.href;
+var currentFile = link.split("/").pop();
+link = link.split(currentFile)[0];
 //DELETA
 form_deleta.onsubmit = function(event){
     event.preventDefault();
@@ -26,7 +28,7 @@ form_pagamento.onsubmit = function(event){
         alert("Valor insuficiente.");
     }else{
         $.ajax({
-            url: link + '/php/selectproduto.php',
+            url: link + 'php/selectproduto.php',
             method: 'GET',
             datatype: 'json',
             }).done(function select(result){
@@ -45,7 +47,7 @@ form_pagamento.onsubmit = function(event){
                 }
             })
         $.ajax({
-            url: link + '/php/pagamento.php',
+            url: link+'php/pagamento.php',
             method: 'GET',
             datatype: 'json',
         }).done(function(result){
@@ -75,12 +77,12 @@ form.onsubmit = function(event){
     form.reset();
     document.getElementById('codigo').focus();
     $.ajax({
-        url: link + '/php/enviaCaixa.php',
+        url: link+'php/enviacaixa.php',
         method: 'POST',
         data: {codigo: _codigo},
         datatype: 'json',
     }).done(function(result){
-        console.log(result)
+        console.log('oi')
         if(result === 'invalid'){
             alert('Código Inválido');
         }else{
@@ -91,7 +93,7 @@ form.onsubmit = function(event){
 //PEGA TODOS OS DADOS AO CARREGAR A PÁGINA
 function getcaixa(){
     $.ajax({
-        url: link + '/php/selectproduto.php',
+        url: link+'php/selectproduto.php',
         method: 'GET',
         datatype: 'json',
         }).done(function select(result){
@@ -128,7 +130,7 @@ function getcaixa(){
                     itens_valor--
                     itens.innerHTML = "Itens: " + itens_valor; 
                     $.ajax({
-                        url: link + '/php/deleta.php',
+                        url: link+'php/deleta.php',
                         method: 'POST',
                         data: {id: id},
                         datatype: 'json',
@@ -147,7 +149,7 @@ function getcaixa(){
 //PEGA O PRODUTO QUE ACABOU DE SER LANÇADO
 function getcurrentcaixa(){
     $.ajax({
-    url: link + '/php/selectproduto.php',
+    url: link+'php/selectproduto.php',
     method: 'GET',
     datatype: 'json',
     }).done(function select(result){
@@ -180,7 +182,7 @@ function getcurrentcaixa(){
                 itens_valor--
                 itens.innerHTML = "Itens: " + itens_valor; 
                 $.ajax({
-                    url: link + '/php/deleta.php',
+                    url: link+'php/deleta.php',
                     method: 'POST',
                     data: {id: id},
                     datatype: 'json',

@@ -1,17 +1,18 @@
 <?php
-  include("conexao.php");
-  if($_SESSION['$nome2'] == true){
-    header("location: caixa.php");
-}else if($_SESSION[ 'adm2' ] == false){
-  header("location: index.php");
-  session_destroy();
-}
-if(isset($_GET['deslogar'])){
-  $_SESSION[ 'adm2' ] = false;
-  $_SESSION['$nome2'] = false;
-  session_destroy();
-  header("location: index.php");
-}
+    session_start();
+    include("conexao.php");
+    if($_SESSION['$nome2'] == true){
+        header("location: caixa.php");
+    }else if($_SESSION[ 'adm2' ] == false){
+        header("location: index.php");
+        session_destroy();
+    }
+    if(isset($_GET['deslogar'])){
+        $_SESSION[ 'adm2' ] = false;
+        $_SESSION['$nome2'] = false;
+        session_destroy();
+        header("location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

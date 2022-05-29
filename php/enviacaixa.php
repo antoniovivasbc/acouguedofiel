@@ -25,11 +25,11 @@
             $qtd = $preco_total/$p->getValorVenda();
             $insert = "INSERT INTO caixa (codigo, descricao, preco, quantidade) VALUES('$codigo', '$p->descricao' , '$preco_total', '$qtd')";
             $result = mysqli_query($msqli, $insert);
-            json_encode("");
+            echo json_encode("");
         }else{
-            json_encode("invalid");
+            echo json_encode("invalid");
         }
     }else{
-        json_encode("invalid");
+        echo json_encode("invalid");
     }
 ?>
