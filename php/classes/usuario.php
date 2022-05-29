@@ -49,14 +49,21 @@
         }
         function cadastrarProd($msqli){
             $p = $this->produto;
+            $codigo = $p->codigo;
+            $descricao = $p->descricao;
+            $valor_custo = $p->valor;
+            $valor_venda = $p->valor_venda;
+            $qtd_estoque = $p->qtd_estoque;
+            $qtd_minima = $p->qtd_minima;
             $select = "SELECT * FROM cadastro_produto WHERE codigo = '$p->codigo'";
             $result = mysqli_query($msqli, $select);
             $row = mysqli_num_rows($result);
             if($row>0){
-                echo '<p class="aviso">*Produto já cadastrado</p>';
+                echo '<p class="aviso">*Código já cadastrado</p>';
             }else{
-                $insert = "INSERT INTO cadastro_produto (codigo, descricao, preco_custo, preco_venda, qtd_estoque, qtd_minima) VALUES($p->codigo, $p->descricao, $p->valor_custo, $p->valor_venda, $p->qtd_estoque, $p->qtd_minima)";
-                mysqli_query($msqli, $insert); 
+                $insert = "INSERT INTO cadastro_produto (codigo, descricao, preco_custo, preco_venda, qtd_estoque, qtd_minima)
+                VALUES ('$codigo', '$descricao', '$valor_custo', '$valor_venda', '$qtd_estoque', '$qtd_minima')";
+                $result = mysqli_query($msqli, $insert);
             }
         }
         function pesquisarProd($msqli, $codigo){
@@ -65,10 +72,11 @@
             $row = mysqli_num_rows($result);
             if($row < 1){
                 echo'<p class="aviso"> *Produto não encontrado </p>';
-                echo json_encode('');
+                json_encode('');
             }else{
                 $dados = mysqli_fetch_array($result);
-                echo json_encode($dados);
+                json_encode($dados);
+                $this->produto->setCodigo($codigo);
                 $this->produto->setDescricao($dados['descricao']);
                 $this->produto->setValorCusto($dados['preco_custo']);
                 $this->produto->setValorVenda($dados['preco_venda']);
@@ -77,12 +85,13 @@
                 return $this->produto;
             }
         }
-        function editarProd($msqli){
+        function editarProd($msqli, $codigo){
             $p = $this->produto;
             $update = "UPDATE cadastro_produto
-            SET descricao = '$p->descricao', preco_custo = '$p->valor_custo', preco_venda = '$p->valor_venda', qtd_estoque = '$p->qtd_estoque', qtd_minima = '$p->qtd_minima'
-            WHERE codigo = '$p->codigo'";
+            SET descricao = '$p->descricao', preco_custo = '$p->valor', preco_venda = '$p->valor_venda', qtd_estoque = '$p->qtd_estoque', qtd_minima = '$p->qtd_minima'
+            WHERE codigo = '$codigo'";
             mysqli_query($msqli, $update);
+            echo '<p class="aviso">*Produto atualizado com sucesso</p>';
         }
         function buscaEstoque($msqli){
             $select = "SELECT * FROM cadastro_produto";

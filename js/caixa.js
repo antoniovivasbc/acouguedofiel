@@ -74,18 +74,19 @@ form.onsubmit = function(event){
     form.reset();
     document.getElementById('codigo').focus();
     $.ajax({
-        url: 'http://localhost/acouguedofiel/php/enviacaixa.php',
+        url: 'http://localhost/acouguedofiel/php/enviaCaixa.php',
         method: 'POST',
         data: {codigo: _codigo},
         datatype: 'json',
     }).done(function(result){
-        if(result == ''){
+        console.log(result)
+        if(result === 'invalid'){
             alert('Código Inválido');
         }else{
             getcurrentcaixa();
         }
     })
-  };
+    };
 //PEGA TODOS OS DADOS AO CARREGAR A PÁGINA
 function getcaixa(){
     $.ajax({

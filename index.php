@@ -1,5 +1,7 @@
 <?php
-    session_start(); 
+    session_start();
+    $_SESSION['adm2'] = false;
+    $_SESSION['$nome2'] = false;
     include("conexao.php");
     //SELECIONA CONTEUDO DO BANCO DE DADOS PARA EFETUAR LOGIN
     $apertou2 = filter_input(INPUT_POST, 'envia2', FILTER_SANITIZE_STRING);
@@ -12,7 +14,8 @@
         $row = mysqli_num_rows($result2);
             if($row == 1){
                 $_SESSION['adm2'] = true;
-                header("location: cadprod.php");
+                $url = "cadprod.php";
+                echo '<script>window.location = "'.$url.'";</script>';
             }
         }
     }
@@ -27,8 +30,8 @@
             $row = mysqli_num_rows($result2);
             if($row == 1){
                 $_SESSION['$nome2'] = true;
-                header("location: caixa.php");
-                
+                $url = "caixa.php";
+                echo '<script>window.location = "'.$url.'";</script>';
             }
         }    
     }
@@ -39,7 +42,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Açougue do Fiel</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="/projects/acouguedofiel/css/login.css">
 </head>
 <body>
     <section>
@@ -50,7 +53,7 @@
                 <div class="ajuste-form">
                     <form action="" method="POST">
                         <input type="text" name="nome1" placeholder="Nome" value = "funcionario" autocomplete = "off"> <br>
-                        <input type="password" name="senha1" placeholder ="Senha" value = "funcionario" autocomplete = "off"> <br>
+                        <input type="password" name="senha1" placeholder ="Senha" value = "1234" autocomplete = "off"> <br>
                         <div class='flexbox'>
                             <input type="submit" class="envia" name="envia1">
                         </div>
@@ -69,7 +72,7 @@
                 <div class="ajuste-form">
                     <form action="" method="POST">
                         <input type="text" name="nome2" placeholder="Nome" value="adm" autocomplete = "off"> <br>
-                        <input type="password" name="senha2" placeholder ="Senha" value = "adm" autocomplete = "off"> <br>
+                        <input type="password" name="senha2" placeholder ="Senha" value = "1234" autocomplete = "off"> <br>
                         <div class='flexbox'>
                             <input type="submit" class="envia" name="envia2">
                         </div>

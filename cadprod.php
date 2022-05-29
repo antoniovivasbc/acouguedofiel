@@ -1,9 +1,8 @@
 <?php
-session_start();
   include("conexao.php");
-  if(isset($_SESSION['$nome2'])){
+  if($_SESSION['$nome2'] == true){
     header("location: caixa.php");
-}else if(!isset($_SESSION[ 'adm2' ])){
+}else if($_SESSION[ 'adm2' ] == false){
   header("location: index.php");
   session_destroy();
 }

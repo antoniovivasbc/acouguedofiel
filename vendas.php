@@ -1,11 +1,11 @@
 <?php
     session_start();
     include("conexao.php");
-    if(isset($_SESSION['$nome2'])){
+    if($_SESSION['$nome2'] == true){
         header("location: caixa.php");
-    }else if(!isset($_SESSION[ 'adm2' ])){
-    header("location: index.php");
-    session_destroy();
+    }else if($_SESSION[ 'adm2' ] == false){
+      header("location: index.php");
+      session_destroy();
     }
     if(isset($_GET['deslogar'])){
     $_SESSION[ 'adm2' ] = false;
@@ -20,19 +20,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Açougue do Fiel</title>
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/tabela.css">
+    <link rel="stylesheet" href="/projects/acouguedofiel/css/geral.css">
+    <link rel="stylesheet" href="/projects/acouguedofiel/css/tabela.css">
 </head>
 <body>
     <section>
-    <nav><div class='toggle'><img onclick='sidebar()' src="img/menu.png" alt=""></div><h1>PAINEL ADMINISTRATIVO</h1></nav>
+    <nav><div class='toggle'><img onclick='sidebar()' src="/projects/acouguedofiel/img/menu.png" alt=""></div><h1>PAINEL ADMINISTRATIVO</h1></nav>
         <div id="sidebar">
-            <a href="caixa.php">Caixa livre</a>
-            <a href="cadprod.php">Cadastro de produtos</a>
-            <a href="pesquisa.php">Pesquisa de produtos</a>
-            <a href="vendas.php">Relatorio de vendas</a>
-            <a href="estoque.php">Planilha de estoque</a>
-            <a href="?deslogar">Logout</a>
+            <a href="/projects/acouguedofiel/caixa.php">Caixa livre</a>
+            <a href="/projects/acouguedofiel/cadprod.php">Cadastro de produtos</a>
+            <a href="/projects/acouguedofiel/pesquisa.php">Pesquisa de produtos</a>
+            <a href="/projects/acouguedofiel/vendas.php">Relatorio de vendas</a>
+            <a href="/projects/acouguedofiel/estoque.php">Planilha de estoque</a>
+            <a href="/projects/acouguedofiel/?deslogar">Logout</a>
         </div>
         <!--CONTEUDO-->
         <div class='flexbox'>
@@ -64,6 +64,6 @@
         </div>
     </section>
 </body>
-<script src="js/jquery-3.5.1.js"></script>
-<script src="js/main.js"></script>
-<script src="js/imprime.js"></script>
+<script src="/projects/acouguedofiel/js/jquery-3.5.1.js"></script>
+<script src="/projects/acouguedofiel/js/main.js"></script>
+<script src="/projects/acouguedofiel/js/imprime.js"></script>
