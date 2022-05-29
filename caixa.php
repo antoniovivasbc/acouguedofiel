@@ -115,7 +115,7 @@
             <div class="modal">
                 <form id='form_deleta'>
                     <a onclick = " tiramodal2() "><img src="img/delete2.png" alt=""></a>
-                    <input autocomplete = "off" value="1234" type="password" placeholder="Digite a senha" name="pagamento" id="senha">
+                    <input autocomplete = "off" type="password" placeholder="Password: 1234" name="pagamento" id="senha">
                     <input type="submit" id='' value="Enviar" name="envia-pagamento">
                 </form>
             </div>
