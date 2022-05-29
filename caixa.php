@@ -90,7 +90,7 @@
                         </div>
                         <br>    
                         <form id='form' method="POST">
-                            <input type="text" autocomplete = "off" placeholder="Código do produto" id='codigo' name="codigo" required autofocus>
+                            <input type="text" autocomplete = "off" placeholder="Código do produto: 1 - 10" id='codigo' name="codigo" required autofocus>
                             <br>
                             <input type="submit" value = "Enviar" class="envia" name="envia_prod">
                             <br>
@@ -115,7 +115,7 @@
             <div class="modal">
                 <form id='form_deleta'>
                     <a onclick = " tiramodal2() "><img src="img/delete2.png" alt=""></a>
-                    <input autocomplete = "off" type="password" placeholder="Digite a senha" name="pagamento" id="senha">
+                    <input autocomplete = "off" value="1234" type="password" placeholder="Digite a senha" name="pagamento" id="senha">
                     <input type="submit" id='' value="Enviar" name="envia-pagamento">
                 </form>
             </div>
